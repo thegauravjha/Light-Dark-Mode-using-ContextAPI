@@ -5,22 +5,25 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Blog from './Pages/Blog';
 import Header from './Components/Header';
+import { ThemeProvider } from './custom Hooks/useTheme';
 
 function App() {
   return (
-    <BrowserRouter>
-      <>
-        {/* header */}
-        <Header />
+    <ThemeProvider>
+      <BrowserRouter>
+        <>
+          {/* header */}
+          <Header />
 
-        {/* Pages */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-        </Routes>
-      </>
-    </BrowserRouter>
+          {/* Pages */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+          </Routes>
+        </>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

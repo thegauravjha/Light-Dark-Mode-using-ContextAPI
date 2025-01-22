@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useTheme } from '../custom Hooks/useTheme';
 
 const Header = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <>
       <nav className="navbar">
@@ -9,6 +12,7 @@ const Header = () => {
           <Link to="/about">ABOUT</Link>
           <Link to="/blog">BLOG</Link>
         </div>
+        <button onClick={toggleTheme}>{theme === 'dark' ? '🌚' : '🌞'}</button>
       </nav>
     </>
   );
